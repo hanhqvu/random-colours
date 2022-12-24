@@ -16,20 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7K-p2-sSM">
-                                <rect key="frame" x="157.66666666666666" y="404.66666666666669" width="75" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SnB-n8-9wq">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="810"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ColourCell" id="7yD-QS-dJi">
+                                        <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7yD-QS-dJi" id="wBf-4v-tPr">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="tempButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0TA-5S-A1G"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="3b4-eU-dLC"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="MNO-BW-qUs"/>
                                 </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="j7K-p2-sSM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MHp-ke-nLR"/>
-                            <constraint firstItem="j7K-p2-sSM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XWZ-Fa-Lse"/>
+                            <constraint firstAttribute="trailing" secondItem="SnB-n8-9wq" secondAttribute="trailing" id="Flf-74-ypo"/>
+                            <constraint firstItem="SnB-n8-9wq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QcR-6e-mni"/>
+                            <constraint firstAttribute="bottom" secondItem="SnB-n8-9wq" secondAttribute="bottom" constant="34" id="RVM-ky-At6"/>
+                            <constraint firstItem="SnB-n8-9wq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gXO-8R-LIA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Colours" id="BmU-MF-RQ5"/>
@@ -46,8 +58,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MuZ-VX-aQy" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4gw-VN-4nf">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="4gw-VN-4nf">
+                        <rect key="frame" x="0.0" y="47" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -79,9 +91,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
